@@ -11,5 +11,5 @@
     pointer-events: none; /* Allows clicks to pass through it */
     
     /* This creates the smooth "follow" effect */
-    transition: transform 0.1s linear; 
+    transition: transform 0.05s linear;
   }
