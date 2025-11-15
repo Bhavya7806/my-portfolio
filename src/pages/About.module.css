@@ -1,0 +1,173 @@
+/* src/pages/About.module.css */
+
+.aboutPage {
+    padding: 4rem 0;
+    /* Page load fade-in animation */
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* 1. Story Section */
+  .storySection {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+  
+  .aboutImage {
+    flex: 1;
+  }
+  
+  .aboutImage img {
+    width: 100%;
+    max-width: 350px;
+    border-radius: 20px;
+    border: var(--glass-border);
+    box-shadow: 0 0 30px rgba(0, 240, 255, 0.2);
+  }
+  
+  .storyContent {
+    flex: 1.5;
+  }
+  
+  .storyContent h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-neon-primary);
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Neon underline for "My Story" */
+  .storyContent h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70%;
+    height: 3px;
+    background: var(--color-neon-primary);
+  }
+  
+  .storyContent p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+    margin-bottom: 1rem;
+  }
+  
+  /* 2. Skills Section */
+  .skillsSection {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  
+  .skillsSection h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--color-text-primary);
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Neon underline for "My Skills" */
+  .skillsSection h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(
+      90deg, 
+      var(--color-neon-primary), 
+      var(--color-neon-secondary)
+    );
+    border-radius: 2px;
+  }
+  
+  .skillsContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+  }
+  
+  /* Glassy Skill Card */
+  .skillCard {
+    flex: 1;
+    min-width: 280px; /* Ensures cards don't get too small */
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: 12px;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s ease;
+  }
+  
+  /* Animation on hover for skill cards */
+  .skillCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+  }
+  
+  .skillCard h3 {
+    font-size: 1.5rem;
+    color: var(--color-neon-primary);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+  }
+  
+  .skillCard ul {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    display: inline-block;
+  }
+  
+  .skillCard li {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.75rem;
+  }
+  
+  /* 3. Philosophy Section */
+  .philosophySection {
+    background: var(--color-bg-variant);
+    border: 1px solid var(--color-neon-secondary);
+    box-shadow: 0 0 20px rgba(240, 0, 255, 0.2);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+  }
+  
+  .philosophySection h3 {
+    font-size: 1.5rem;
+    color: var(--color-neon-secondary);
+    margin-bottom: 1rem;
+  }
+  
+  .philosophySection p {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--color-text-primary);
+  }
+  @media (max-width: 768px) {
+    .storySection {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  
+    .skillsContainer {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }

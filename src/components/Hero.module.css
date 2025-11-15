@@ -1,0 +1,147 @@
+/* src/components/Hero.module.css */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: calc(100vh - 80px); /* Full height minus navbar */
+    gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .heroContent {
+    flex: 1;
+  }
+  
+  .heroTitle {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .name {
+    color: var(--color-neon-primary);
+    text-shadow: 0 0 10px var(--color-neon-primary);
+  }
+  
+  .heroSubtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .heroDescription {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 2.5rem;
+  }
+  
+  /* Button Container */
+  .buttonContainer {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.8rem;
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  /* Primary Button (Neon) */
+  .btnPrimary {
+    background-color: var(--color-neon-primary);
+    color: var(--color-dark-bg);
+    border-color: var(--color-neon-primary);
+    box-shadow: 0 0 15px var(--color-neon-primary);
+  }
+  
+  .btnPrimary:hover {
+    background-color: transparent;
+    color: var(--color-neon-primary);
+  }
+  
+  /* Secondary Button (Glassy Outline) */
+  .btnSecondary {
+    background-color: transparent;
+    color: var(--color-text-primary);
+    border: 2px solid var(--color-neon-secondary);
+  }
+  
+  .btnSecondary:hover {
+    background-color: var(--color-neon-secondary);
+    color: var(--color-dark-bg);
+    box-shadow: 0 0 15px var(--color-neon-secondary);
+  }
+  
+  /* Hero Image */
+  .heroImageContainer {
+    flex: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Neon animated border */
+  .heroImageBorder {
+    padding: 1rem;
+    border-radius: 50%;
+    position: relative;
+    
+    /* This creates the static gradient border */
+    background: linear-gradient(
+      to right, 
+      var(--color-neon-primary), 
+      var(--color-neon-secondary)
+    );
+    
+    /* NEW ANIMATION: Replaces the 'rotateBorder' animation */
+    animation: pulseGlow 3s ease-in-out infinite alternate;
+  }
+  
+  .heroImage {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--color-dark-bg);
+    display: block;
+  }
+  
+  @keyframes pulseGlow {
+    0% {
+      /* Glow with the primary neon color */
+      box-shadow: 0 0 20px var(--color-neon-primary);
+    }
+    100% {
+      /* Glow with the secondary neon color */
+      box-shadow: 0 0 35px var(--color-neon-secondary);
+    }
+  }
+  /* Stacks the hero section on screens 768px or smaller */
+@media (max-width: 768px) {
+    .hero {
+      flex-direction: column; /* Stack text over image */
+      text-align: center;
+      padding-top: 3rem;
+    }
+    
+    .heroContent {
+      order: 2; /* Put content (text) below the image */
+    }
+    
+    .heroImageContainer {
+      order: 1; /* Put image on top */
+    }
+  
+    .heroTitle {
+      font-size: 2.5rem; /* Make text a bit smaller */
+    }
+  }

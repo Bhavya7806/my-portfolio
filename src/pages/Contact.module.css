@@ -1,0 +1,185 @@
+/* src/pages/Contact.module.css */
+
+.contactPage {
+    padding: 4rem 0;
+    /* Page load fade-in animation */
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .wrapper {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap; /* Allows stacking on small screens */
+  }
+  
+  .contactForm, .contactInfo {
+    flex: 1;
+    min-width: 320px; /* Prevents them from getting too squished */
+  }
+  
+  .contactForm h2, .contactInfo h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--color-neon-primary);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .contactForm h2::after, .contactInfo h2::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 70%;
+    height: 3px;
+    background: var(--color-neon-primary);
+  }
+  
+  /* ----- Form Styling ----- */
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .formGroup {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .formGroup label {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text-secondary);
+  }
+  
+  /* Glassy Inputs */
+  .formGroup input,
+  .formGroup textarea {
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    border-radius: 8px;
+    padding: 1rem;
+    font-size: 1rem;
+    color: var(--color-text-primary);
+    width: 100%;
+    font-family: inherit;
+    transition: all 0.3s ease;
+  }
+  
+  .formGroup input:focus,
+  .formGroup textarea:focus {
+    outline: none;
+    border-color: var(--color-neon-primary);
+    box-shadow: 0 0 15px var(--color-neon-primary);
+  }
+  
+  .formGroup textarea {
+    resize: vertical; /* Allow vertical resize */
+  }
+  
+  /* Neon Send Button */
+  .sendButton {
+    padding: 0.8rem 1.8rem;
+    border: 2px solid var(--color-neon-primary);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: var(--color-neon-primary);
+    color: var(--color-dark-bg);
+    box-shadow: 0 0 15px var(--color-neon-primary);
+    align-self: flex-start; /* Don't stretch the button */
+  }
+  
+  .sendButton:hover {
+    background-color: transparent;
+    color: var(--color-neon-primary);
+  }
+  
+  /* ----- Availability Styling ----- */
+  .availability {
+    margin-top: 3rem;
+  }
+  
+  .availability h3 {
+    font-size: 1.5rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+  }
+  
+  .availability ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .availability li {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .availability li svg {
+    color: #00ff00; /* Bright neon green for the check */
+    font-size: 1.2rem;
+  }
+  
+  /* ----- Contact Info Styling ----- */
+  .infoList {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .infoItem {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.1rem;
+    color: var(--color-text-primary);
+  }
+  
+  .infoItem svg {
+    font-size: 2rem;
+    color: var(--color-neon-primary);
+  }
+  
+  /* ----- Socials Styling ----- */
+  .socials {
+    display: flex;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .socialIcon {
+    color: var(--color-text-secondary);
+    font-size: 2.5rem;
+    transition: all 0.3s ease;
+  }
+  
+  .socialIcon:hover {
+    color: var(--color-neon-secondary);
+    transform: scale(1.2) translateY(-5px);
+    filter: drop-shadow(0 0 10px var(--color-neon-secondary));
+  }
+
+
+  @media (max-width: 768px) {
+    .wrapper {
+      flex-direction: column;
+      gap: 3rem;
+    }
+  }

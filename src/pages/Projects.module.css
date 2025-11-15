@@ -1,0 +1,109 @@
+/* src/pages/Projects.module.css */
+.projectsPage {
+    padding: 4rem 0;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--color-text-primary);
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 4px;
+    background: linear-gradient(
+      90deg, 
+      var(--color-neon-primary), 
+      var(--color-neon-secondary)
+    );
+    border-radius: 2px;
+  }
+  
+  .projectGrid {
+    display: grid;
+    /* 2 columns, with a gap */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 2.5rem;
+  }
+  
+  /* On smaller screens, stack to 1 column */
+  @media (max-width: 992px) {
+    .projectGrid {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* src/pages/Projects.module.css */
+
+/* ... (all your existing styles .projectsPage, .title, etc.) ... */
+
+/* --- ADD THESE NEW STYLES BELOW --- */
+
+.profilesSection {
+    margin-top: 6rem; /* Add space above this section */
+    
+  }
+  
+  .profilesGrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  
+  .profileLink {
+    /* Glassy box for each icon */
+    background: var(--glass-bg);
+    border: var(--glass-border);
+    padding: 2rem;
+    border-radius: 12px;
+    width: 200px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    
+    text-decoration: none;
+    color: var(--color-text-primary);
+    font-size: 1.2rem;
+    font-weight: 500;
+    
+    transition: all 0.3s ease;
+  }
+  
+  .profileLink svg {
+    font-size: 3.5rem;
+    color: var(--color-neon-primary);
+    transition: all 0.3s ease;
+  }
+  
+  /* Animation on hover */
+  .profileLink:hover {
+    transform: translateY(-10px);
+    background: rgba(26, 26, 46, 0.7);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.3);
+    color: var(--color-neon-primary);
+  }
+  
+  .profileLink:hover svg {
+    color: var(--color-neon-secondary);
+    filter: drop-shadow(0 0 8px var(--color-neon-secondary));
+  }

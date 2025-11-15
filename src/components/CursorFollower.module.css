@@ -1,0 +1,15 @@
+/* src/components/CursorFollower.module.css */
+.follower {
+    position: fixed;
+    top: -10px; /* Offset to center the icon on the cursor */
+    left: -10px; /* Offset to center the icon on the cursor */
+    width: 20px;
+    height: 20px;
+    color: var(--color-neon-primary);
+    font-size: 1.5rem;
+    z-index: 9999;
+    pointer-events: none; /* Allows clicks to pass through it */
+    
+    /* This creates the smooth "follow" effect */
+    transition: transform 0.1s linear; 
+  }
